@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Mario Universe</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Música de fundo -->
+<audio id="bg-music" autoplay loop>
+  <source src="02. Title.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Mario_Series_Logo.svg/2560px-Mario_Series_Logo.svg.png" alt="Mario Logo" class="logo">
+  <div>
+    <a href="https://www.nintendo.com/" target="_blank" class="btn-cadastro">Cadastrar</a>
+    <button id="music-btn">⏸️</button>
+  </div>
+</div>
+
+<!-- Header / Menu -->
+<header>
+  <nav class="container">
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Sobre Mario</a></li>
+      <li><a href="#history">História</a></li>
+      <li><a href="#characters">Personagens</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Background animado -->
+<div class="background"></div>
+
+
+<!-- Main Container -->
+<div class="container main-container">
+
+  <!-- Home -->
+  <section id="home" class="section home">
+    <div class="home-content">
+      <h1>Super Mario Universe</h1>
+      <p>Entre no mundo mágico de Mario, Luigi e seus amigos. Aventuras, desafios e diversão garantida!</p>
+      <img src="https://media.tenor.com/e8aElio9JQAAAAAm/mario-walking.webp" alt="Mario" class="hero-img">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <h2>Sobre Mario</h2>
+    <p>Mario é o encanador mais famoso do mundo. Desde 1981, ele enfrenta desafios épicos para proteger o Reino dos Cogumelos. Corajoso, divertido e cheio de estilo, Mario conquistou o coração de milhões de fãs.</p>
+  </section>
+
+  <!-- History -->
+  <section id="history" class="section history">
+    <h2>História da Franquia</h2>
+    <p>A trajetória de Mario começou em Donkey Kong (1981). Desde então, ele protagonizou inúmeros jogos, evoluindo do clássico 2D ao inovador 3D, sempre trazendo diversão, mundos criativos e mecânicas surpreendentes.</p>
+  </section>
+
+  <!-- Characters -->
+  <section id="characters" class="section characters">
+    <h2>Personagens</h2>
+    <div class="characters-grid">
+      <div class="character" data-name="Mario" data-info="O herói do Reino dos Cogumelos. Sempre pronto para salvar a Princesa Peach.">
+        <a href="https://youtu.be/30yVesD1jVg?si=wO03ykMSZErULEqX" target="_blank"><img src="https://mario.nintendo.com/static/0f10f738d1f9aa8292fa7d93c35f2a07/02be2/mario.png" alt="Mario"><p>Mario</p></a>
+      </div>
+      <div class="character" data-name="Luigi" data-info="Irmão de Mario, alto e corajoso, mesmo sendo tímido.">
+        <a href="https://youtu.be/i5S-8isAzwk?si=tiX2d03wnxu8vabL" target="_blank"><img src="https://mario.nintendo.com/static/73f9272aebf9a014261584b35597878f/d9801/luigi.png" alt="Luigi"><p>Luigi</p></a>
+      </div>
+      <div class="character" data-name="Peach" data-info="Princesa do Reino dos Cogumelos, elegante e determinada.">
+        <a href="https://youtu.be/r-3Exp6pr20?si=EN49-l_-2QxDv2TS" target="_blank"><img src="https://mario.nintendo.com/static/43a96c1d5b681d338864aac15cd391b9/f3703/peach.png" alt="Peach"><p>Peach</p></a>
+      </div>
+      <div class="character" data-name="Bowser" data-info="O rei dos Koopas, grande vilão e desafio constante para Mario.">
+        <a href="https://youtu.be/DMqU_EkEJf4?si=DT7jKnHGEW7xX16h" target="_blank"><img src="https://mario.nintendo.com/static/7204f288e3e823a8203c445fb6cc0d7e/b1656/bowser.png" alt="Bowser"><p>Bowser</p></a>
+      </div>
+      <div class="character" data-name="Yoshi" data-info="O dinossauro amigo de Mario, especialista em aventuras saltitantes.">
+        <a href="https://youtu.be/8B_-qRbu05s?si=5FIcGnEjRyaddhDz" target="_blank"><img src="https://mario.nintendo.com/static/850b7938ec9df2a77921738a12857e88/c4ba3/yoshi.png" alt="Yoshi"><p>Yoshi</p></a>
+      </div>
+      <div class="character" data-name="Toad" data-info="Pequeno habitante do Reino dos Cogumelos, sempre ajudando Mario.">
+        <a href="https://youtu.be/0HoXIySUO2c?si=tu6BkQoL7AujZVA9" target="_blank"><img src="https://mario.nintendo.com/static/e3ebf11b069067da929b608250baa44e/55d59/toad.png" alt="Toad"><p>Toad</p></a>
+      </div>
+      <div class="character" data-name="Rosalina" data-info="Guardião das estrelas e protetora dos Lumas.">
+        <a href="https://youtu.be/d_-Wy-ryUbo?si=P0j8hXgzIyPwMV3p" target="_blank"><img src="https://mario.nintendo.com/static/9413cb5d146400e7368855759d084c69/d1a6b/rosalina.png" alt="Rosalina"><p>Rosalina</p></a>
+      </div>
+      <div class="character" data-name="Wario" data-info="Rival de Mario, ambicioso e trapaceiro.">
+        <a href="https://youtu.be/f7iXq1-q2xk?si=D5ZJUDWwxrZODaO4" target="_blank"><img src="https://mario.nintendo.com/static/2e8e71c5b38a5aedd5eef91c3d54bf13/747d9/wario.png" alt="Wario"><p>Wario</p></a>
+      </div>
+      <div class="character" data-name="Donkey Kong" data-info="O gorila que começou a carreira de Mario.">
+        <a href="https://youtu.be/BrBqYcwE8oo?si=tKHRk996qazayO3v" target="_blank"><img src="https://mario.nintendo.com/static/b444206395480738954c3cbbd86716cc/c2c43/donkey-kong.png" alt="Donkey Kong"><p>Donkey Kong</p></a>
+      </div>
+      <div class="character" data-name="Waluigi" data-info="Irmão de Wario .">
+        <a href="https://youtu.be/5bfK71s4zl4?si=uO6MO4VhKfoFBfjN" target="_blank"><img src="https://mario.nintendo.com/static/54c0617c992012b38e212c154f4e3944/3eddd/waluigi.png" alt="Waluigi"><p>Waluigi</p></a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <h2 id="modalName"></h2>
+    <p id="modalInfo"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
