@@ -130,3 +130,13 @@ body {
 
 }
 
+@media (max-width: 768px) {
+
+  .character img {
+    height: 150px;
+    object-fit: contain;
+    transform: scale(1.1);
+  }
+
+}
+
