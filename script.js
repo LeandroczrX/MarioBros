@@ -10,7 +10,7 @@ characters.forEach(char=>{
     // Verifica se é o anel do Sonic
     if(char.id === 'sonic-ring'){
       document.getElementById('sonic-sound').play();
-      alert("Som do anel do Sonic!");
+  
     } else {
       modal.style.display='flex';
       modalName.textContent=char.dataset.name;
@@ -29,3 +29,25 @@ musicBtn.addEventListener('click', ()=>{
   if(music.paused){ music.play(); musicBtn.textContent='⏸️'; }
   else{ music.pause(); musicBtn.textContent='▶️'; }
 });
+
+
+
+
+
+
+characters.forEach(char => {
+  char.addEventListener('click', () => {
+    // Som do anel do Sonic
+    if (char.id === 'sonic-ring') {
+      document.getElementById('sonic-sound').play();
+      return;
+    }
+
+    // Pega o nome do personagem
+    const name = char.dataset.name.toLowerCase().replace(/\s/g, '-'); // substitui espaço por hífen
+    const sound = document.getElementById(`${name}-sound`);
+
+    if (sound) sound.play();
+  });
+});
+
