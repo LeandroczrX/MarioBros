@@ -6,11 +6,16 @@ const modalInfo = document.getElementById('modalInfo');
 const closeBtn = document.getElementById('closeBtn');
 
 characters.forEach(char=>{
-  char.addEventListener('click', (e)=>{
-    e.preventDefault();
-    modal.style.display='flex';
-    modalName.textContent=char.dataset.name;
-    modalInfo.textContent=char.dataset.info;
+  char.addEventListener('click', ()=>{
+    // Verifica se é o anel do Sonic
+    if(char.id === 'sonic-ring'){
+      document.getElementById('sonic-sound').play();
+      alert("Som do anel do Sonic!");
+    } else {
+      modal.style.display='flex';
+      modalName.textContent=char.dataset.name;
+      modalInfo.textContent=char.dataset.info;
+    }
   });
 });
 
