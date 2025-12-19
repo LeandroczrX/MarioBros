@@ -111,5 +111,22 @@ body {
     cursor: default;
   }
 }
+@media (max-width: 768px) {
 
+  /* 4 personagens por linha no celular */
+  .characters-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Padronizar altura dos cards */
+  .character {
+    height: 260px;
+  }
+
+  /* Padronizar imagens */
+  .character img {
+    height: 140px;
+  }
+
+}
 
