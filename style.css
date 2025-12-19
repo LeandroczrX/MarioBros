@@ -69,7 +69,43 @@ body {
 
 
 
+/* REPONSIVIDADE */
+@media (max-width: 768px) {
 
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+
+  .section h1 {
+    font-size: 32px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+
+  .section p {
+    font-size: 16px;
+  }
+
+  .hero-img {
+    width: 200px;
+  }
+
+  .character img {
+    height: 120px;
+  }
+}
 
 
 
