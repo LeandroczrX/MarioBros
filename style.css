@@ -106,6 +106,10 @@ body {
     height: 120px;
   }
 }
-
+@media (hover: none) {
+  body {
+    cursor: default;
+  }
+}
 
 
