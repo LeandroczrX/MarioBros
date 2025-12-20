@@ -22,13 +22,7 @@ characters.forEach(char=>{
 closeBtn.addEventListener('click', ()=> modal.style.display='none');
 window.addEventListener('click', (e)=>{ if(e.target===modal) modal.style.display='none'; });
 
-// Música
-const music = document.getElementById('bg-music');
-const musicBtn = document.getElementById('music-btn');
-musicBtn.addEventListener('click', ()=>{
-  if(music.paused){ music.play(); musicBtn.textContent='⏸️'; }
-  else{ music.pause(); musicBtn.textContent='▶️'; }
-});
+
 
 
 
@@ -50,4 +44,3 @@ characters.forEach(char => {
     if (sound) sound.play();
   });
 });
-
