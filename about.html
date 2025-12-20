@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Mario Universe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<meta name="theme-color" content="rgb(253, 7, 7)" />
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+        background-image: url('https://i.pinimg.com/736x/84/f7/68/84f768cce97a523754b86c6babebce22.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+    }
+    .top-bar {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 30px; background:rgb(253, 7, 7); color:white; 
+}
+.top-bar .logo { height:50px; }
+
+    /* Header / Menu */
+header { background:rgba(0,0,0,0.7); }
+.menu { display:flex; justify-content:center; list-style:none; padding:12px 0; }
+.menu li { margin:0 25px; }
+.menu li a { color:white; text-decoration:none; font-weight:bold; font-size:18px; transition:0.3s; }
+.menu li a:hover { color:#ffcc00; transform:scale(1.1); }
+    
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 12px 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin: 0 25px;
+    }
+
+    .menu li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .menu li a:hover {
+        color: #ffcc00;
+        transform: scale(1.1);
+    }
+
+    section {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .bloco {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 60px;
+        align-items: center;
+    }
+
+    .bloco:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .texto {
+        flex: 1;
+        background: rgba(0,0,0,0.6);
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .imagem {
+        flex: 1;
+        height: 280px;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        background-color: #1d3557;
+        color: white;
+    }
+
+    /* Top Bar */
+.top-bar {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 30px; background:rgb(253, 7, 7); color:white; 
+}
+.top-bar .logo { height:50px; }
+.top-bar a.btn-cadastro, #music-btn {
+  background:#ffcc00; color:#000; padding:6px 12px; border-radius:6px; font-weight:bold; cursor:pointer; border:none; margin-left:5px;
+}
+
+
+
+
+    .btn-cadastro {
+        background: #ff0000;
+        padding: 8px 15px;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .btn-cadastro:hover {
+        background: #cc0000;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Mario_Series_Logo.svg/2560px-Mario_Series_Logo.svg.png" alt="Mario Logo" style="height:50px;">
+    <a href="https://www.nintendo.com/" target="_blank" class="btn-cadastro">Cadastrar</a>
+</div>
+
+<!-- MENU -->
+<header>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre Mario</a></li>
+            <li><a href="history.html">História</a></li>
+            <li><a href="characters.html">Personagens</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+<section>
+
+    <!-- HISTÓRIA -->
+    <div class="bloco">
+        <div class="texto">
+            <h2>História do Mario</h2>
+            <p>
+                Mario é um encanador italiano criado por Shigeru Miyamoto em 1981.
+                Ele se tornou um ícone dos videogames e já participou de inúmeras aventuras.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://geekdama.com.br/wp-content/uploads/2025/10/nintendo-super-mario-pensando-duvida-postcover-696x392.jpg.webp" alt="Mario">
+        </div>
+    </div>
+
+    <!-- PLATAFORMA -->
+    <div class="bloco">
+        <div class="texto">
+            <h2>Mario Plays Games</h2>
+            <p>
+                A série Super Mario é o coração da franquia, com fases criativas,
+                desafios e muita diversão.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://gaming-cdn.com/images/products/14461/screenshot/super-mario-bros-wonder-switch-jogo-nintendo-eshop-europe-wallpaper-3.jpg?v=1730891119" alt="Mario Plataforma">
+        </div>
+    </div>
+
+    <!-- FUTEBOL -->
+    <div class="bloco">
+        <div class="texto">
+            <h2>Mario Plays: Futebol</h2>
+            <p>
+                Mario entra no campo com seus amigos em partidas cheias de ação,
+                poderes especiais e muita diversão.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://i.ytimg.com/vi/wm4re9FUpFk/maxresdefault.jpg" alt="Mario Futebol">
+        </div>
+    </div>
+
+    <!-- TÊNIS -->
+    <div class="bloco">
+        <div class="texto">
+            <h2>Mario Plays: Tênis</h2>
+            <p>
+                Mario disputa torneios emocionantes usando técnicas especiais
+                contra personagens clássicos.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRezqFCbFKD5o8hpboatkW0576ncndibypcq4E0IqmuFdGrPBOZFXHNWf-HU-OBh19ylt4&usqp=CAU" alt="Mario Tênis">
+        </div>
+    </div>
+
+    <!-- KART -->
+    <div class="bloco">
+        <div class="texto">
+            <h2>Mario Plays: Kart</h2>
+            <p>
+                Mario Kart é uma das franquias mais famosas,
+                com corridas caóticas e itens malucos.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYXPYOWnKD1k3XatLj_IV5k0nyccxhyxczlg&s" alt="Mario Kart">
+        </div>
+    </div>
+
+</section>
+
+<!-- CURIOSIDADES -->
+<section>
+    <h2 style="text-align:center; margin-bottom:40px;">
+        Curiosidades sobre Mario
+    </h2>
+
+    <div class="bloco">
+        <div class="texto">
+            <h3>1. Origem do nome</h3>
+            <p>
+                O nome "Mario" foi inspirado em Mario Segale,
+                o dono do depósito da Nintendo nos Estados Unidos.
+                Antes disso, o personagem era conhecido como Jumpman.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://logosmarcas.net/wp-content/uploads/2022/01/Super-Mario-Emblema.png" alt="Mario antigo">
+        </div>
+    </div>
+
+    <div class="bloco">
+        <div class="texto">
+            <h3>2. Bigode icônico</h3>
+            <p>
+                O bigode foi criado para facilitar a visualização
+                do rosto de Mario nos jogos antigos, que tinham
+                poucos pixels e limitações gráficas.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://pbs.twimg.com/profile_images/1929549617441521664/dn4udfbC_400x400.jpg" alt="Bigode do Mario">
+        </div>
+    </div>
+
+    <div class="bloco">
+        <div class="texto">
+            <h3>3. Muitos esportes</h3>
+            <p>
+                Mario não é só encanador!
+                Ele já participou de corridas de kart,
+                futebol, basquete, tênis, golfe
+                e até Olimpíadas com seus amigos.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://i.ytimg.com/vi/qQZCq9hHt5Y/maxresdefault.jpg" alt="Mario esportes">
+        </div>
+    </div>
+
+    <div class="bloco">
+        <div class="texto">
+            <h3>4. Aparições fora dos games</h3>
+            <p>
+                Mario já apareceu em desenhos animados,
+                filmes, quadrinhos, parques temáticos
+                e diversos produtos da cultura pop,
+                tornando-se um ícone mundial.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="https://www.syfy.com/sites/syfy/files/styles/hero_image__large__computer__alt/public/2023/02/the_super_mario_bros_movie.jpg" alt="Mario cultura pop">
+        </div>
+    </div>
+</section>
+
+
+    
+
+<footer>
+    &copy; 2025 Super Mario Universe
+</footer>
+
+</body>
+</html>
