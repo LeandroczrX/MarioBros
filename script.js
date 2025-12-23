@@ -12,9 +12,21 @@ characters.forEach(char=>{
   char.addEventListener('click', ()=>{
     // Verifica se é o anel do Sonic
     if(char.id === 'sonic-ring'){
-      document.getElementById('sonic-sound').play();
-
+      const sonicSound = document.getElementById('sonic-sound');
+      if (sonicSound) {
+        sonicSound.load();
+        sonicSound.play();
+      }
+      return;
     } else {
+      // Play character sound
+      const name = char.dataset.name.toLowerCase().replace(/\s/g, '-');
+      const sound = document.getElementById(`${name}-sound`);
+      if (sound) {
+        sound.load();
+        sound.play();
+      }
+
       modal.style.display='flex';
       modalName.textContent=char.dataset.name;
       modalInfo.textContent=char.dataset.info;
@@ -67,18 +79,45 @@ window.addEventListener('click', (e)=>{
 
 
 
-characters.forEach(char => {
-  char.addEventListener('click', () => {
-    // Som do anel do Sonic
-    if (char.id === 'sonic-ring') {
-      document.getElementById('sonic-sound').play();
-      return;
-    }
 
-    // Pega o nome do personagem
-    const name = char.dataset.name.toLowerCase().replace(/\s/g, '-'); // substitui espaço por hífen
-    const sound = document.getElementById(`${name}-sound`);
 
-    if (sound) sound.play();
+// Carousel
+const carouselInner = document.querySelector('.carousel-inner');
+const carouselImages = document.querySelectorAll('.carousel-img');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+const indicators = document.querySelectorAll('.carousel-indicator');
+let currentIndex = 0;
+
+function updateCarousel() {
+  carouselInner.style.transform = `translateX(-${currentIndex * 800}px)`;
+  carouselImages.forEach((img, index) => {
+    img.classList.toggle('active', index === currentIndex);
+  });
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index === currentIndex);
+  });
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselImages.length - 1;
+  updateCarousel();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex < carouselImages.length - 1) ? currentIndex + 1 : 0;
+  updateCarousel();
+});
+
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel();
   });
 });
+
+// Auto-play
+setInterval(() => {
+  currentIndex = (currentIndex < carouselImages.length - 1) ? currentIndex + 1 : 0;
+  updateCarousel();
+}, 1500);
