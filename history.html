@@ -15,6 +15,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Mario_Series_Logo.svg/2560px-Mario_Series_Logo.svg.png" alt="Mario Logo" class="logo">
   <div>
     <a href="https://www.nintendo.com/" target="_blank" class="btn-cadastro">Cadastrar</a>
+    <button id="music-btn" class="btn-cadastro">🎵 Música</button>
   </div>
 </div>
 
@@ -23,21 +24,27 @@
   <nav class="container">
     <ul class="menu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Sobre Mario</a></li>
+      <li><a href="about.html"> Sobre Mario</a></li>
       <li><a href="history.html">História</a></li>
       <li><a href="characters.html">Personagens</a></li>
     </ul>
   </nav>
 </header>
 
+<!-- Background animado -->
+<div class="background"></div>
+
 <!-- História -->
+<div class="container">
 <section id="history" class="section history">
-    <h2>A História de Mario</h2>
+    <h2 style="font-family: 'Press Start 2P', cursive;">A História de Mario</h2>
     <p style="text-align:center; max-width:800px; margin: 0 auto 50px;">
         Mario é mais do que um personagem de videogame. Ele é um símbolo da
         história dos jogos eletrônicos, atravessando gerações e conquistando
         milhões de fãs ao redor do mundo.
     </p>
+
+    <img class="small-block" src="https://cdn.colab55.com/images/55001/studio/25929/art/202549/stickers.png" alt="Mario Block" style="width: 100px; height: auto;">
 
     <div class="bloco">
         <div class="texto">
@@ -136,84 +143,130 @@
     </div>
 </section>
 
-<!-- Estilo CSS -->
-<style>
-    body {
-        margin: 0;
-        font-family: 'Trebuchet MS', Arial, sans-serif;
-        background-image: 
-        
-        url('https://i.pinimg.com/736x/84/f7/68/84f768cce97a523754b86c6babebce22.jpg'); /* sua imagem */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
 
-    color: white; /* mantém o texto legível */
 
+<!-- JavaScript para funcionalidades dinâmicas -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animações acionadas por rolagem
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    }, observerOptions);
+
+    // Aplicar animação inicial aos blocos
+    const blocos = document.querySelectorAll('.bloco');
+    blocos.forEach((bloco, index) => {
+        bloco.style.opacity = '0';
+        bloco.style.transform = 'translateY(60px) scale(0.9)';
+        bloco.style.transition = `all 0.8s ease ${index * 0.2}s`;
+        observer.observe(bloco);
+    });
+
+    // Zoom interativo nas imagens
+    const imagens = document.querySelectorAll('.imagem img');
+    imagens.forEach(img => {
+        img.addEventListener('click', function() {
+            this.classList.toggle('zoomed');
+        });
+    });
+
+
+
+    // Função para tocar sons
+    function playSound(soundFile) {
+        const audio = new Audio(`audio/${soundFile}`);
+        audio.volume = 0.3;
+        audio.play().catch(e => console.log('Erro ao tocar som:', e));
     }
 
-    header  { background:rgba(0,0,0,0.7); }
-    .menu { display:flex; justify-content:center; list-style:none; padding:12px 0; }
-    .menu li { margin:0 25px; }
-    .menu li a { color:white; text-decoration:none; font-weight:bold; font-size:18px; transition:0.3s; }
-    .menu li a:hover { color:#ffcc00; transform:scale(1.1); }
+    // Adicionar sons a interações dos blocos
+    blocos.forEach(bloco => {
+        bloco.addEventListener('click', function() {
+            playSound('02. Title.mp3');
+            this.classList.add('jump');
+            setTimeout(() => this.classList.remove('jump'), 500);
+        });
+    });
 
-    section {
-        max-width: 1000px;
-        margin: 50px auto;
-        padding: 20px;
+    // Adicionar som e animação ao small-block
+    const smallBlock = document.querySelector('.small-block');
+    if (smallBlock) {
+        smallBlock.addEventListener('click', function() {
+            playSound('02. Title.mp3');
+            this.classList.add('jump');
+            setTimeout(() => this.classList.remove('jump'), 500);
+        });
     }
 
-    .bloco {
-        display: flex;
-        gap: 30px;
-        margin-bottom: 60px;
-        align-items: center;
+    // Animação extra para o título principal
+    const titulo = document.querySelector('#history h2');
+    titulo.style.animation = 'tituloPulse 2s ease-in-out infinite';
+
+    // Adicionar estrelas flutuantes
+    function criarEstrela() {
+        const estrela = document.createElement('div');
+        estrela.textContent = '⭐';
+        estrela.style.position = 'absolute';
+        estrela.style.left = Math.random() * 100 + 'vw';
+        estrela.style.top = '-10px';
+        estrela.style.fontSize = Math.random() * 20 + 10 + 'px';
+        estrela.style.color = '#ffcc00';
+        estrela.style.animation = `estrelaFlutuar ${Math.random() * 3 + 2}s linear`;
+        estrela.style.zIndex = '0';
+        document.body.appendChild(estrela);
+
+        setTimeout(() => {
+            estrela.remove();
+        }, 5000);
     }
 
-    .bloco:nth-child(even) {
-        flex-direction: row-reverse;
+    // Criar estrelas periodicamente
+    setInterval(criarEstrela, 2000);
+});
+
+// Animações CSS adicionais
+const style = document.createElement('style');
+style.textContent = `
+    .imagem img.zoomed {
+        transform: scale(1.5);
+        z-index: 10;
+        position: relative;
+        border-radius: 20px;
+        box-shadow: 0 0 50px rgba(255,204,0,0.8);
+        transition: all 0.3s ease;
     }
 
-    .texto {
-        flex: 1;
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        color: #1d3557;
+    @keyframes tituloPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
     }
 
-    .imagem {
-        flex: 1;
-        height: 280px;
-        border-radius: 15px;
-        background-color: #a8dadc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #457b9d;
-        text-align: center;
+    @keyframes estrelaFlutuar {
+        from { transform: translateY(-10px); opacity: 1; }
+        to { transform: translateY(100vh); opacity: 0; }
     }
 
-    .imagem img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 15px;
+    .bloco:hover .texto h2 {
+        animation: tituloGlow 1s ease-in-out infinite alternate;
     }
 
-    footer {
-        text-align: center;
-        padding: 30px;
-        background-color: #1d3557;
-        color: white;
+    @keyframes tituloGlow {
+        from { text-shadow: 3px 3px #000, 0 0 10px #ffcc00; }
+        to { text-shadow: 3px 3px #000, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
     }
-    
-    
-</style>
+`;
+document.head.appendChild(style);
+</script>
 
 </body>
 </html>
